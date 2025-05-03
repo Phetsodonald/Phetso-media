@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --charcoal: #36454f;
+  --tomato: #ff4747;
+  --white: #ffffff;
+  --lightgray: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'poppins', sans-serif;
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+nav {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+ 
+}
+
+nav a:hover {
+  color: var(--tomato);
+}
+
+.hero{
+  background: url('./images/hero-pic.jpg') no-repeat center center/cover;
+  color: var(--white);
+  text-align: center;
+  padding: 10rem 6rem;
+  position: relative;
+  z-index: 100;
+}
+
+.hero::before {
+content: "";
+position: absolute;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background-color: rgba(0, 0, 0, 0.6);
+z-index: 0;
+}
+
+.hero-content {
+position: relative;
+z-index: 1;
+max-width: 800px;
+margin: auto;
+}
+
+.hero h2 {
+font-size: 2rem;
+margin-bottom: 1.5rem;
+}
+
+.button {
+display: inline-block;
+background-color: var(--tomato);
+color: var(--white);
+padding: 0.75rem 1.5rem;
+border-radius: 10px;
+font-size: 1rem;
+margin-top: 1rem;
+text-decoration: none;
+}
+
+
+section {
+  padding: 4rem 1rem;
+  margin-bottom: 5em;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.services,
+.testimonials {
+  background: var(--lightgray);
+}
+
+.services-grid,
+.testimonials-grid,
+.projects-grid,
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 1rem;
+}
+
+.contact form {
+  display: grid;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--charcoal);
+  border-radius: 10px;
+}
+
+.contact button {
+  background: var(--tomato);
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 2rem 1rem;
+}
+
+.socials a {
+  margin: 0 0.5rem;
+  color: var(--white);
+}
+
+nav .hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--charcoal);
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  nav.active ul {
+    display: flex;
+  }
+
+  nav .hamburger {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--white);
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2{
+    text-align: start;
+  }
+}
