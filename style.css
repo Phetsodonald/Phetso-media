@@ -214,7 +214,7 @@ nav .hamburger {
   display: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   nav ul {
     display: none;
     flex-direction: column;
